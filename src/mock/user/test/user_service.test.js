@@ -28,6 +28,7 @@ describe("LoginService-Stub", () => {
     expect(login.mock.calls.length).toBe(1);
   });
 
+  //로그인을 2번해도 한번만 호출되어야하는 test
   it("should not call login() on UserClient again if already logged in", async () => {
     await loginService.login("abs", "abc");
     await loginService.login("abs", "abc");
